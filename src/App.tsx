@@ -6,6 +6,7 @@ import { CatalogView } from './views/CatalogView';
 import { UseCasesPage } from './views/UseCasesPage';
 import { TutorialsView } from './views/TutorialsView';
 import { ToolDetailModal } from './components/ToolDetailModal';
+import { PortfolioToast } from './components/PortfolioToast';
 
 export const App: React.FC = () => {
   const [activeView, setActiveView] = useState<NavView>('dashboard');
@@ -67,6 +68,9 @@ export const App: React.FC = () => {
         tool={selectedToolModal}
         onClose={() => setSelectedToolModal(null)}
       />
+
+      {/* Floating Portfolio Notification */}
+      <PortfolioToast />
     </>
   );
 };
