@@ -35,30 +35,30 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   return (
     <div className="space-y-8 animate-in fade-in duration-300">
       {/* Hero Banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-linear-to-l from-academic-900 via-academic-800 to-academic-700 text-white p-6 sm:p-8 shadow-xl">
+      <div className="relative overflow-hidden rounded-3xl bg-[#10223d] bg-gradient-to-l from-[#10223d] via-[#1a3762] to-[#234f93] text-white p-6 sm:p-8 shadow-xl border border-academic-800/50">
         <div className="relative z-10 max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-academic-100 text-xs font-semibold mb-4 border border-white/10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-white text-xs font-semibold mb-4 border border-white/20">
             <Sparkles className="w-3.5 h-3.5 text-academic-300" />
             <span>המרכז לקידום ההוראה והמחקר באקדמיה</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight mb-3">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight mb-3 tracking-tight drop-shadow-xs">
             ברוכים הבאים לפורטל כלי ה-AI האקדמי לסגל
           </h1>
-          <p className="text-academic-100 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+          <p className="text-slate-100 text-sm sm:text-base leading-relaxed mb-6 font-normal">
             מאגר ייעודי של כלי בינה מלאכותית יוצרת (GenAI) המאושרים ומסופקים לחברי הסגל, לצד מקרי בוחן של עמיתים, הדרכות מעשיות והנחיות אתיקה מוסדיות.
           </p>
 
           <div className="flex flex-wrap gap-3">
             <button
               onClick={() => onNavigate('catalog')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm bg-white text-academic-900 hover:bg-academic-50 transition-all shadow-md hover:shadow-lg cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm bg-white text-slate-900 hover:bg-slate-100 transition-all shadow-md hover:shadow-lg cursor-pointer"
             >
               <span>מעבר לקטלוג הכלים המלא</span>
               <ArrowLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => onNavigate('tutorials')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all backdrop-blur-xs cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm bg-white/15 hover:bg-white/25 text-white border border-white/25 transition-all backdrop-blur-xs cursor-pointer"
             >
               <GraduationCap className="w-4 h-4" />
               <span>הדרכות וסדנאות סגל</span>
@@ -67,8 +67,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* Decorative background circles */}
-        <div className="absolute left-0 bottom-0 translate-y-1/3 -translate-x-1/4 w-96 h-96 rounded-full bg-academic-600/30 blur-3xl pointer-events-none"></div>
-        <div className="absolute right-0 top-0 -translate-y-1/4 translate-x-1/4 w-80 h-80 rounded-full bg-academic-500/20 blur-2xl pointer-events-none"></div>
+        <div className="absolute left-0 bottom-0 translate-y-1/3 -translate-x-1/4 w-96 h-96 rounded-full bg-academic-500/20 blur-3xl pointer-events-none"></div>
+        <div className="absolute right-0 top-0 -translate-y-1/4 translate-x-1/4 w-80 h-80 rounded-full bg-academic-400/20 blur-2xl pointer-events-none"></div>
       </div>
 
       {/* Institutional Metric Highlights */}
@@ -254,7 +254,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       </div>
 
       {/* Upcoming Workshops & Tutorials preview */}
-      <div className="bg-linear-to-r from-slate-900 to-slate-800 text-white rounded-3xl p-6 sm:p-7 shadow-lg">
+      <div className="rounded-3xl bg-[#0f172a] bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white p-6 sm:p-7 shadow-xl border border-slate-700/60">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center text-white">
@@ -277,11 +277,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           {upcomingTutorials.map((tut) => (
             <div
               key={tut.id}
-              className="bg-white/5 border border-white/10 hover:border-academic-400/50 p-4 rounded-2xl backdrop-blur-xs transition-colors flex flex-col justify-between"
+              className="bg-slate-800/80 border border-slate-700 hover:border-academic-400/60 p-4 rounded-2xl transition-all flex flex-col justify-between shadow-sm"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-2">
-                  <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-academic-500/20 text-academic-200 border border-academic-400/20">
+                  <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-academic-500/20 text-academic-200 border border-academic-400/30">
                     {tut.category}
                   </span>
                   <span className="text-[11px] text-slate-300 font-mono">
@@ -296,7 +296,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 </p>
               </div>
 
-              <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs">
+              <div className="pt-2 border-t border-slate-700/60 flex items-center justify-between text-xs">
                 <span className="text-[11px] text-slate-300">{tut.format}</span>
                 <button
                   onClick={() => onNavigate('tutorials')}
