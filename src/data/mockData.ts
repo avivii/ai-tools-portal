@@ -1,4 +1,8 @@
-import type { AITool, CategoryKey, UseCase, Tutorial, NavItem } from '../types';
+import type { AITool, CategoryKey, Tutorial, NavItem } from '../types';
+import { useCasesData, type UseCase } from './useCasesData';
+
+export { useCasesData, type UseCase };
+export const MOCK_USE_CASES: UseCase[] = useCasesData;
 
 export const CATEGORIES: { id: CategoryKey; label: string; description: string; icon: string }[] = [
   { id: 'all', label: 'כל הכלים', description: 'כל הכלים המאושרים והנבדקים במוסד', icon: 'Grid' },
@@ -227,61 +231,6 @@ export const MOCK_TOOLS: AITool[] = [
   }
 ];
 
-export const MOCK_USE_CASES: UseCase[] = [
-  {
-    id: 'uc-1',
-    title: 'הצלבת 45 מאמרים היסטוריים ומיפוי נרטיבים באמצעות NotebookLM',
-    facultyMember: 'פרופ\' רחל מנצור',
-    department: 'החוג להיסטוריה של עם ישראל',
-    toolUsed: 'NotebookLM',
-    toolId: 'notebooklm',
-    summary: 'במסגרת מחקר על עיתונות יהודית בתחילת המאה ה-20, הועלו למערכת עשרות מאמרי מקור סרוקים. המערכת אפשרה לחלץ מוטיבים חוזרים ולמפות ציר זמן מדויק תוך ציטוט מראי מקום.',
-    methodology: 'טעינת קבצי PDF סרוקים שעברו OCR לתוך "מחברת" ייעודית, ניסוח שאלות חקר שיטתיות ואימות כל תשובה מול המקור המדויק בלחיצת כפתור.',
-    results: 'חיסכון של כ-60 שעות עבודה על מיון ראשוני של חומרים, וגילוי הצלבות חדשות שלא נלכדו בקריאה ידנית.',
-    tags: ['היסטוריה', 'ניתוח מקורות', 'ארכיונים'],
-    date: 'אוקטובר 2026',
-  },
-  {
-    id: 'uc-2',
-    title: 'בניית סימולטור אינטראקטיבי לתרגול דיאלוג קליני-רפואי עם GPT-4o',
-    facultyMember: 'ד"ר עמית גלבוע',
-    department: 'הפקולטה לרפואה ומדעי הבריאות',
-    toolUsed: 'ChatGPT Edu (GPT-4o)',
-    toolId: 'chatgpt-edu',
-    summary: 'פיתוח סוכן מותאם אישית (Custom GPT) המשמש כ"מטופל וירטואלי" בעל תסמינים מוגדרים מראש, המאפשר לסטודנטים בשנים הקליניות לתרגל אנמנזה רפואית לפני מפגש עם חולים.',
-    methodology: 'הגדרת פרומפט מערכת קפדני הכולל את ההיסטוריה הרפואית של המטופל, והנחיות לא לחשוף את האבחנה אלא אם נשאלו השאלות הנכונות.',
-    results: '94% מהסטודנטים דיווחו על עלייה משמעותית בביטחון העצמי במהלך לקיחת אנמנזה, לצד פידבק אישי מיידי בסיום כל תרגול.',
-    tags: ['הוראה רפואית', 'סימולציות', 'Custom GPTs'],
-    date: 'ספטמבר 2026',
-  },
-  {
-    id: 'uc-3',
-    title: 'ניתוח תמטי של 30 ראיונות עומק באמצעות Claude 3.5 Sonnet',
-    facultyMember: 'ד"ר מיה רוזנפלד',
-    department: 'המחלקה לסוציולוגיה ואנתרופולוגיה',
-    toolUsed: 'Claude 3.5 Sonnet',
-    toolId: 'claude',
-    summary: 'שימוש בחלון ההקשר הגדול של Claude לניתוח טקסטואלי של עשרות תמלולי ראיונות עם עובדי הייטק, לצורך זיהוי דפוסי שחיקה ושביעות רצון.',
-    methodology: 'טעינת התמלילים האנונימיים, בקשה לחילוץ קטגוריות וקודי תוכן על פי מתודולוגיית Grounded Theory, תוך השוואה בין קבוצות גיל.',
-    results: 'האצת שלב הקידוד הראשוני ב-70%, תוך שמירה על עקביות מתודולוגית ובקרת איכות על ידי החוקרת.',
-    tags: ['סוציולוגיה', 'מחקר איכותני', 'קידוד תמטי'],
-    date: 'אוגוסט 2026',
-  },
-  {
-    id: 'uc-4',
-    title: 'סקירת ספרות מטא-אנליטית מהירה על אנרגיה ירוקה עם Consensus',
-    facultyMember: 'פרופ\' יונתן ברק',
-    department: 'הפקולטה להנדסת סביבה וחומרים',
-    toolUsed: 'Consensus',
-    toolId: 'consensus',
-    summary: 'בדיקת קונצנזוס מדעי על יעילות תאי שמש פרוסקייטיים לאורך זמן, ומיפוי 150 המאמרים המרכזיים שפורסמו בשלוש השנים האחרונות.',
-    methodology: 'שימוש בממשק החיפוש המדעי של Consensus להצלבת שאילתות מחקר וסינון לפי גודל מדגם ודירוג כתב העת (Q1/Q2).',
-    results: 'מיקוד מהיר ב-12 מאמרים קריטיים ששימשו בסיס לכתיבת הצעת מחקר שהוגשה לקרן הלאומית למדע (ISF).',
-    tags: ['הנדסה', 'סקירה שיטתית', 'הצעות מחקר'],
-    date: 'יולי 2026',
-  }
-];
-
 export const MOCK_TUTORIALS: Tutorial[] = [
   {
     id: 'tut-1',
@@ -348,14 +297,14 @@ export const MOCK_TUTORIALS: Tutorial[] = [
 export const NAV_ITEMS: NavItem[] = [
   { id: 'dashboard', label: 'דשבורד ראשי', icon: 'LayoutDashboard' },
   { id: 'catalog', label: 'קטלוג כלי AI', icon: 'Sparkles', badge: '8 כלים' },
-  { id: 'use-cases', label: 'מקרי בוחן', icon: 'BookOpenCheck', badge: 'חדש' },
+  { id: 'use-cases', label: 'מקרי בוחן', icon: 'BookOpenCheck', badge: `${useCasesData.length} מקרים` },
   { id: 'tutorials', label: 'מרכז הדרכות', icon: 'GraduationCap' },
 ];
 
 export const INSTITUTION_STATS = {
   activeToolsCount: 8,
   facultyMembersEngaged: 342,
-  useCasesDocumented: 24,
+  useCasesDocumented: useCasesData.length,
   workshopsCount: 18,
   licenseCoverage: '98%',
   institutionName: 'המרכז לחדשנות וידע אקדמי בבינה מלאכותית',

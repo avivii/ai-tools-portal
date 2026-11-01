@@ -1,20 +1,20 @@
 import React from 'react';
 import type { AITool, NavView } from '../types';
 import { ToolCard } from '../components/ToolCard';
-import { 
-  MOCK_TOOLS, 
-  MOCK_USE_CASES, 
-  MOCK_TUTORIALS, 
+import {
+  MOCK_TOOLS,
+  MOCK_USE_CASES,
+  MOCK_TUTORIALS,
   ETHICAL_GUIDELINES,
-  INSTITUTION_STATS 
+  INSTITUTION_STATS
 } from '../data/mockData';
-import { 
-  Sparkles, 
-  ArrowLeft, 
-  BookOpenCheck, 
-  GraduationCap, 
-  ShieldCheck, 
-  Users, 
+import {
+  Sparkles,
+  ArrowLeft,
+  BookOpenCheck,
+  GraduationCap,
+  ShieldCheck,
+  Users,
   FileCheck2,
   ChevronLeft
 } from 'lucide-react';
@@ -170,27 +170,33 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
             <div className="space-y-4">
               {recentUseCases.map((uc) => (
-                <div 
+                <div
                   key={uc.id}
                   className="p-4 rounded-2xl bg-slate-50 hover:bg-academic-50/50 border border-slate-100 transition-colors"
                 >
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <span className="text-xs font-bold text-academic-800 bg-academic-100/70 px-2.5 py-0.5 rounded-full">
-                      {uc.toolUsed}
+                      {uc.recommendedTool}
                     </span>
                     <span className="text-[11px] text-slate-400 font-medium">
-                      {uc.facultyMember} • {uc.department}
+                      {uc.facultyMember ? `${uc.facultyMember} • ` : ''}{uc.department || uc.categoryLabel}
                     </span>
                   </div>
                   <h4 className="font-bold text-sm text-slate-900 mb-1 leading-snug">
                     {uc.title}
                   </h4>
                   <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-2">
-                    {uc.summary}
+                    {uc.problem}
                   </p>
-                  <div className="text-[11px] text-emerald-700 font-medium bg-emerald-50/70 px-2.5 py-1 rounded-lg border border-emerald-100 inline-block">
-                    תוצאה: {uc.results}
-                  </div>
+                  {uc.results ? (
+                    <div className="text-[11px] text-emerald-700 font-medium bg-emerald-50/70 px-2.5 py-1 rounded-lg border border-emerald-100 inline-block">
+                      תוצאה: {uc.results}
+                    </div>
+                  ) : (
+                    <div className="text-[11px] text-academic-700 font-medium bg-academic-50/70 px-2.5 py-1 rounded-lg border border-academic-100 inline-block">
+                      {uc.categoryLabel}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

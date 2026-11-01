@@ -25,18 +25,24 @@ export interface AITool {
   provider: string;
 }
 
+export type UseCaseCategory = 'academic' | 'admin' | 'students';
+
 export interface UseCase {
   id: string;
+  category: 'academic' | 'admin' | 'students';
+  categoryLabel: string;
   title: string;
-  facultyMember: string;
-  department: string;
-  toolUsed: string;
-  toolId: string;
-  summary: string;
-  methodology: string;
-  results: string;
-  tags: string[];
-  date: string;
+  problem: string;
+  recommendedTool: string;
+  promptTemplate: string;
+  facultyMember?: string;
+  department?: string;
+  methodology?: string;
+  results?: string;
+  tags?: string[];
+  date?: string;
+  toolUsed?: string;
+  summary?: string;
 }
 
 export interface Tutorial {

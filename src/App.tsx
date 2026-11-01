@@ -3,7 +3,7 @@ import type { NavView, AITool } from './types';
 import { MainLayout } from './layouts/MainLayout';
 import { DashboardView } from './views/DashboardView';
 import { CatalogView } from './views/CatalogView';
-import { UseCasesView } from './views/UseCasesView';
+import { UseCasesPage } from './views/UseCasesPage';
 import { TutorialsView } from './views/TutorialsView';
 import { ToolDetailModal } from './components/ToolDetailModal';
 
@@ -38,7 +38,7 @@ export const App: React.FC = () => {
           />
         );
       case 'use-cases':
-        return <UseCasesView />;
+        return <UseCasesPage />;
       case 'tutorials':
         return <TutorialsView />;
       default:
