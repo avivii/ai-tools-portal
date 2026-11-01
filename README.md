@@ -74,3 +74,18 @@ AI portal/
    ```bash
    npm run build
    ```
+
+---
+
+## 🌐 פריסה בענן (Deploy to Render)
+
+הפרויקט מוגדר לפריסה ישירה ואוטומטית כ-**Static Site** ב-Render באמצעות קובץ הקונפיגורציה `render.yaml`.
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/avivii/ai-tools-portal)
+
+### הגדרות לפריסה ידנית ב-Render:
+- **Environment:** `Static Site`
+- **Build Command:** `npm run build`
+- **Publish Directory:** `dist`
+- **Rewrite Rule:** `/*` -> `/index.html` (תומך ב-SPA Client-side routing)
+
