@@ -1,8 +1,7 @@
 import type { AITool, CategoryKey, Tutorial, NavItem } from '../types';
 import { useCasesData, type UseCase } from './useCasesData';
-import { VIDEO_TUTORIALS, type VideoTutorial } from './videoTutorialsData';
 
-export { useCasesData, type UseCase, VIDEO_TUTORIALS, type VideoTutorial };
+export { useCasesData, type UseCase };
 export const MOCK_USE_CASES: UseCase[] = useCasesData;
 
 export const CATEGORIES: { id: CategoryKey; label: string; description: string; icon: string }[] = [
