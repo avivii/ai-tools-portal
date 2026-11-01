@@ -233,6 +233,19 @@ export const MOCK_TOOLS: AITool[] = [
 
 export const MOCK_TUTORIALS: Tutorial[] = [
   {
+    id: 'tut-notebooklm-students',
+    title: 'הדרכת וידאו לסטודנטים: למידה יעילה ומחקר באמצעות NotebookLM',
+    category: 'הוראה ולמידה',
+    difficulty: 'בסיסי',
+    durationMinutes: 4,
+    description: 'מדריך וידאו יישומי לסטודנטים: כיצד להעלות סיכומי הרצאות, סילבוסים ומאמרים ל-NotebookLM, לחלץ תשובות מדויקות לקראת מבחנים, ולהפיק סיכומי שמע (Audio Overviews) ללמידה עצמאית.',
+    instructor: 'היחידה לקידום ההוראה והלמידה',
+    format: 'סרטון מוקלט',
+    targetAudience: 'סטודנטים',
+    videoUrl: '/videos/notebooklm-learning.mp4',
+    linkText: 'צפייה בסרטון המודרך'
+  },
+  {
     id: 'tut-1',
     title: 'הנדסת פרומפטים מתקדמת לחוקרים: מנוסח כללי לתוצאה אקדמית מדויקת',
     category: 'פרומפטים',

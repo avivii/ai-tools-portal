@@ -56,6 +56,8 @@ export interface Tutorial {
   format: 'סרטון מוקלט' | 'מדריך כתוב' | 'סדנה חיה';
   downloadUrl?: string;
   linkText?: string;
+  videoUrl?: string;
+  targetAudience?: string;
 }
 
 export type NavView = 'dashboard' | 'catalog' | 'use-cases' | 'tutorials';
